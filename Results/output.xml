@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.8.10 on linux)" generated="20230214 09:53:30.524" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="/home/dione/Documents/Projet/Automatisation Test/Test_Groupe_Agrica/tests">
+<suite id="s1-s1" name="Mon Espace Commercial" source="/home/dione/Documents/Projet/Automatisation Test/Test_Groupe_Agrica/tests/mon_espace_commercial.robot">
+<test id="s1-s1-t1" name="Etape de connexion, réinitialisation du mot de passe" line="34">
+<kw name="Ouvrir le navigateur" library="selenium_utils" type="SETUP">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230214 09:53:31.120" level="INFO">Opening browser 'Chrome' to base url 'https://qualif-partenaires.groupagrica.com/'.</msg>
+<status status="PASS" starttime="20230214 09:53:31.120" endtime="20230214 09:53:39.396"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230214 09:53:39.399" endtime="20230214 09:53:39.877"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Exécution de test démarrée sur ${browser}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:53:39.879" endtime="20230214 09:53:39.882"/>
+</kw>
+<status status="PASS" starttime="20230214 09:53:31.119" endtime="20230214 09:53:39.883"/>
+</kw>
+<kw name="Se connecter à Agrica Espace Co Sans Email" library="connexion_page">
+<arg>${browser}</arg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>path : ${EXEC_DIR}/pages/connexion_page.robot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:53:39.885" endtime="20230214 09:53:39.886"/>
+</kw>
+<kw name="Cliquer sur le bouton Connexion" library="connexion_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_connexion}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230214 09:53:39.893" level="INFO">Clicking button 'id:edit-submit'.</msg>
+<msg timestamp="20230214 09:53:42.463" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230214 09:53:42.468" level="FAIL">Button with locator 'id:edit-submit' not found.</msg>
+<status status="FAIL" starttime="20230214 09:53:39.889" endtime="20230214 09:53:42.477"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:53:39.887" endtime="20230214 09:53:42.477"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${ele}</var>
+<arg>${champ_adressemail}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="NOT RUN" starttime="20230214 09:53:42.478" endtime="20230214 09:53:42.479"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${message}</var>
+<arg>return arguments[0].validationMessage;</arg>
+<arg>ARGUMENTS</arg>
+<arg>${ele}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20230214 09:53:42.479" endtime="20230214 09:53:42.479"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>le message est: ${message}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230214 09:53:42.480" endtime="20230214 09:53:42.480"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${Navigateur}"=='Google Chrome'</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${message}</arg>
+<arg>Veuillez renseigner ce champ.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20230214 09:53:42.480" endtime="20230214 09:53:42.480"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${Navigateur}"=='FireFox'</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${message}</arg>
+<arg>Veuillez compléter ce champ.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20230214 09:53:42.481" endtime="20230214 09:53:42.481"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${Navigateur}"=='Edge'</arg>
+<arg>Should Be Equal As Strings</arg>
+<arg>${message}</arg>
+<arg>Veuillez remplir ce champ.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20230214 09:53:42.481" endtime="20230214 09:53:42.481"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:53:39.884" endtime="20230214 09:53:42.482"/>
+</kw>
+<kw name="Se connecter à Agrica Espace Co Avec Email" library="connexion_page">
+<arg>${nom_utilisateur_Agrica}</arg>
+<arg>${browser}</arg>
+<status status="NOT RUN" starttime="20230214 09:53:42.483" endtime="20230214 09:53:42.483"/>
+</kw>
+<kw name="Se connecter à Agrica Espace Co Avec Email erroné" library="connexion_page">
+<arg>${nom_utilisateur_Agrica_erroné}</arg>
+<arg>${motdepasse_Agrica}</arg>
+<arg>${browser}</arg>
+<status status="NOT RUN" starttime="20230214 09:53:42.483" endtime="20230214 09:53:42.483"/>
+</kw>
+<kw name="Se connecter à Agrica Espace Co Avec Password incorrect" library="connexion_page">
+<arg>${nom_utilisateur_Agrica_test}</arg>
+<arg>${motdepasse_Agrica_incorrecte}</arg>
+<status status="NOT RUN" starttime="20230214 09:53:42.484" endtime="20230214 09:53:42.484"/>
+</kw>
+<kw name="Mot de passe oublié" library="connexion_page">
+<arg>${nom_utilisateur_Agrica}</arg>
+<arg>${nom_utilisateur_Agrica_erroné}</arg>
+<arg>${browser}</arg>
+<status status="NOT RUN" starttime="20230214 09:53:42.484" endtime="20230214 09:53:42.484"/>
+</kw>
+<kw name="Fermer le navigateur" library="selenium_utils" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230214 09:53:42.486" endtime="20230214 09:53:42.624"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Fin de l'exécution de test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:53:42.625" endtime="20230214 09:53:42.625"/>
+</kw>
+<status status="PASS" starttime="20230214 09:53:42.485" endtime="20230214 09:53:42.626"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:53:31.118" endtime="20230214 09:53:42.628">Button with locator 'id:edit-submit' not found.</status>
+</test>
+<test id="s1-s1-t2" name="Connexion en tant que commercial/assureur/admin/caisse regionale/Distributeur" line="42">
+<kw name="Ouvrir le navigateur" library="selenium_utils" type="SETUP">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230214 09:53:42.639" level="INFO">Opening browser 'Chrome' to base url 'https://qualif-partenaires.groupagrica.com/'.</msg>
+<status status="PASS" starttime="20230214 09:53:42.637" endtime="20230214 09:53:51.477"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230214 09:53:51.479" endtime="20230214 09:53:52.264"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Exécution de test démarrée sur ${browser}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:53:52.266" endtime="20230214 09:53:52.269"/>
+</kw>
+<status status="PASS" starttime="20230214 09:53:42.636" endtime="20230214 09:53:52.269"/>
+</kw>
+<kw name="Connexion en tant que Distributeur" library="creation_devis_offre_zenea">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Step-01-Connexion en tant que destributeur</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:53:52.278" endtime="20230214 09:53:52.278"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>path : ${EXEC_DIR}/pages/connexion_page.robot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:53:52.279" endtime="20230214 09:53:52.281"/>
+</kw>
+<kw name="Se connecter à Agrica Espace Co" library="connexion_page">
+<arg>${nom_utilisateur_Distributeur}</arg>
+<arg>${motdepasse_Distributeur}</arg>
+<arg>${titre_profil_Distributeur}</arg>
+<kw name="Entrer l'adresse mail" library="connexion_page">
+<arg>${nom_utilisateur}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${champ_adressemail}</arg>
+<arg>${nom_utilisateur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230214 09:53:52.286" level="INFO">Typing text 'distributeur_qtpm@groupagrica.com' into text field 'id:username'.</msg>
+<msg timestamp="20230214 09:53:53.000" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230214 09:53:53.003" level="FAIL">Element with locator 'id:username' not found.</msg>
+<status status="FAIL" starttime="20230214 09:53:52.284" endtime="20230214 09:53:53.008"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:53:52.283" endtime="20230214 09:53:53.008"/>
+</kw>
+<kw name="Entrer le mot de passe" library="connexion_page">
+<arg>${motdepasse}</arg>
+<status status="NOT RUN" starttime="20230214 09:53:53.009" endtime="20230214 09:53:53.009"/>
+</kw>
+<kw name="Cliquer sur le bouton Connexion" library="connexion_page">
+<status status="NOT RUN" starttime="20230214 09:53:53.010" endtime="20230214 09:53:53.010"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${nom_profil_attendu}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20230214 09:53:53.011" endtime="20230214 09:53:53.011"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:53:52.282" endtime="20230214 09:53:53.012"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:53:52.273" endtime="20230214 09:53:53.012"/>
+</kw>
+<kw name="Se deconnecter de Agrica" library="connexion_page">
+<status status="NOT RUN" starttime="20230214 09:53:53.012" endtime="20230214 09:53:53.012"/>
+</kw>
+<kw name="Connexion en tant que Credit Agricole" library="creation_devis_accord_national_de_la_production_agricole">
+<status status="NOT RUN" starttime="20230214 09:53:53.012" endtime="20230214 09:53:53.013"/>
+</kw>
+<kw name="Se deconnecter de Agrica" library="connexion_page">
+<status status="NOT RUN" starttime="20230214 09:53:53.013" endtime="20230214 09:53:53.013"/>
+</kw>
+<kw name="Connexion en tant que Assureur" library="creation_devis_offre_zenea">
+<status status="NOT RUN" starttime="20230214 09:53:53.013" endtime="20230214 09:53:53.014"/>
+</kw>
+<kw name="Se deconnecter de Agrica" library="connexion_page">
+<status status="NOT RUN" starttime="20230214 09:53:53.014" endtime="20230214 09:53:53.014"/>
+</kw>
+<kw name="Connexion en tant que Admin" library="creation_devis_accord_national_de_la_production_agricole">
+<status status="NOT RUN" starttime="20230214 09:53:53.014" endtime="20230214 09:53:53.014"/>
+</kw>
+<kw name="Se deconnecter de Agrica" library="connexion_page">
+<status status="NOT RUN" starttime="20230214 09:53:53.014" endtime="20230214 09:53:53.015"/>
+</kw>
+<kw name="Fermer le navigateur" library="selenium_utils" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230214 09:53:53.016" endtime="20230214 09:53:53.149"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Fin de l'exécution de test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:53:53.149" endtime="20230214 09:53:53.150"/>
+</kw>
+<status status="PASS" starttime="20230214 09:53:53.015" endtime="20230214 09:53:53.150"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:53:42.635" endtime="20230214 09:53:53.150">Element with locator 'id:username' not found.</status>
+</test>
+<test id="s1-s1-t3" name="Creation devis offre Zenea" line="55">
+<kw name="Ouvrir le navigateur" library="selenium_utils" type="SETUP">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230214 09:53:53.157" level="INFO">Opening browser 'Chrome' to base url 'https://qualif-partenaires.groupagrica.com/'.</msg>
+<status status="PASS" starttime="20230214 09:53:53.156" endtime="20230214 09:54:01.215"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230214 09:54:01.218" endtime="20230214 09:54:02.253"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Exécution de test démarrée sur ${browser}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:02.256" endtime="20230214 09:54:02.258"/>
+</kw>
+<status status="PASS" starttime="20230214 09:53:53.155" endtime="20230214 09:54:02.258"/>
+</kw>
+<kw name="Connexion en tant que Distributeur" library="creation_devis_offre_zenea">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Step-01-Connexion en tant que destributeur</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:02.260" endtime="20230214 09:54:02.261"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>path : ${EXEC_DIR}/pages/connexion_page.robot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:02.261" endtime="20230214 09:54:02.262"/>
+</kw>
+<kw name="Se connecter à Agrica Espace Co" library="connexion_page">
+<arg>${nom_utilisateur_Distributeur}</arg>
+<arg>${motdepasse_Distributeur}</arg>
+<arg>${titre_profil_Distributeur}</arg>
+<kw name="Entrer l'adresse mail" library="connexion_page">
+<arg>${nom_utilisateur}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${champ_adressemail}</arg>
+<arg>${nom_utilisateur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230214 09:54:02.269" level="INFO">Typing text 'distributeur_qtpm@groupagrica.com' into text field 'id:username'.</msg>
+<msg timestamp="20230214 09:54:03.021" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230214 09:54:03.025" level="FAIL">Element with locator 'id:username' not found.</msg>
+<status status="FAIL" starttime="20230214 09:54:02.265" endtime="20230214 09:54:03.029"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:02.264" endtime="20230214 09:54:03.029"/>
+</kw>
+<kw name="Entrer le mot de passe" library="connexion_page">
+<arg>${motdepasse}</arg>
+<status status="NOT RUN" starttime="20230214 09:54:03.030" endtime="20230214 09:54:03.030"/>
+</kw>
+<kw name="Cliquer sur le bouton Connexion" library="connexion_page">
+<status status="NOT RUN" starttime="20230214 09:54:03.031" endtime="20230214 09:54:03.031"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${nom_profil_attendu}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20230214 09:54:03.032" endtime="20230214 09:54:03.032"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:02.262" endtime="20230214 09:54:03.032"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:02.259" endtime="20230214 09:54:03.032"/>
+</kw>
+<kw name="Formulaire Devis-Accès-Offre Zenea" library="creation_devis_offre_zenea">
+<status status="NOT RUN" starttime="20230214 09:54:03.033" endtime="20230214 09:54:03.033"/>
+</kw>
+<kw name="Formulaire Devis-Entreprise-Offre Zenea" library="creation_devis_offre_zenea">
+<status status="NOT RUN" starttime="20230214 09:54:03.033" endtime="20230214 09:54:03.034"/>
+</kw>
+<kw name="Formulaire Devis-Signataires-Offre Zenea" library="creation_devis_offre_zenea">
+<status status="NOT RUN" starttime="20230214 09:54:03.034" endtime="20230214 09:54:03.034"/>
+</kw>
+<kw name="Formulaire Devis-Distributeur-Offre Zenea" library="creation_devis_offre_zenea">
+<status status="NOT RUN" starttime="20230214 09:54:03.035" endtime="20230214 09:54:03.035"/>
+</kw>
+<kw name="Tarificateur Zenéa" library="creation_devis_offre_zenea">
+<status status="NOT RUN" starttime="20230214 09:54:03.036" endtime="20230214 09:54:03.036"/>
+</kw>
+<kw name="Envoi de la proposition commerciale-Offre zenea" library="creation_devis_offre_zenea">
+<status status="NOT RUN" starttime="20230214 09:54:03.036" endtime="20230214 09:54:03.036"/>
+</kw>
+<kw name="Fermer le navigateur" library="selenium_utils" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230214 09:54:03.038" endtime="20230214 09:54:03.160"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Fin de l'exécution de test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:03.162" endtime="20230214 09:54:03.164"/>
+</kw>
+<status status="PASS" starttime="20230214 09:54:03.037" endtime="20230214 09:54:03.166"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:53:53.154" endtime="20230214 09:54:03.168">Element with locator 'id:username' not found.</status>
+</test>
+<test id="s1-s1-t4" name="Creation zenea_produits_du_sol" line="64">
+<kw name="Ouvrir le navigateur" library="selenium_utils" type="SETUP">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230214 09:54:03.212" level="INFO">Opening browser 'Chrome' to base url 'https://qualif-partenaires.groupagrica.com/'.</msg>
+<status status="PASS" starttime="20230214 09:54:03.205" endtime="20230214 09:54:12.612"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230214 09:54:12.615" endtime="20230214 09:54:17.563"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Exécution de test démarrée sur ${browser}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:17.566" endtime="20230214 09:54:17.570"/>
+</kw>
+<status status="PASS" starttime="20230214 09:54:03.190" endtime="20230214 09:54:17.571"/>
+</kw>
+<kw name="Connexion en tant que Distributeur_Produits_Sol" library="creation_devis_zenea_produits_du_sol">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Step-01-Connexion en tant que destributeur</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:17.576" endtime="20230214 09:54:17.577"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>path : ${EXEC_DIR}/pages/connexion_page.robot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:17.578" endtime="20230214 09:54:17.579"/>
+</kw>
+<kw name="Se connecter à Agrica Espace Co" library="connexion_page">
+<arg>${nom_utilisateur_Distributeur}</arg>
+<arg>${motdepasse_Distributeur}</arg>
+<arg>${titre_profil_Distributeur}</arg>
+<kw name="Entrer l'adresse mail" library="connexion_page">
+<arg>${nom_utilisateur}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${champ_adressemail}</arg>
+<arg>${nom_utilisateur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230214 09:54:17.591" level="INFO">Typing text 'distributeur_qtpm@groupagrica.com' into text field 'id:username'.</msg>
+<msg timestamp="20230214 09:54:18.938" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230214 09:54:18.949" level="FAIL">Element with locator 'id:username' not found.</msg>
+<status status="FAIL" starttime="20230214 09:54:17.585" endtime="20230214 09:54:18.955"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:17.583" endtime="20230214 09:54:18.955"/>
+</kw>
+<kw name="Entrer le mot de passe" library="connexion_page">
+<arg>${motdepasse}</arg>
+<status status="NOT RUN" starttime="20230214 09:54:18.956" endtime="20230214 09:54:18.956"/>
+</kw>
+<kw name="Cliquer sur le bouton Connexion" library="connexion_page">
+<status status="NOT RUN" starttime="20230214 09:54:18.956" endtime="20230214 09:54:18.956"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${nom_profil_attendu}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20230214 09:54:18.957" endtime="20230214 09:54:18.958"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:17.581" endtime="20230214 09:54:18.958"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:17.571" endtime="20230214 09:54:18.958"/>
+</kw>
+<kw name="Formulaire Devis-Accès-Offre Zenea_Produits_Sol" library="creation_devis_zenea_produits_du_sol">
+<status status="NOT RUN" starttime="20230214 09:54:18.959" endtime="20230214 09:54:18.959"/>
+</kw>
+<kw name="Formulaire Devis-Entreprise-Offre Zenea_Produits_Sol" library="creation_devis_zenea_produits_du_sol">
+<status status="NOT RUN" starttime="20230214 09:54:18.959" endtime="20230214 09:54:18.959"/>
+</kw>
+<kw name="Formulaire Devis-Signataires-Offre Zenea_Produits_Sol" library="creation_devis_zenea_produits_du_sol">
+<status status="NOT RUN" starttime="20230214 09:54:18.960" endtime="20230214 09:54:18.960"/>
+</kw>
+<kw name="Formulaire Devis-Distributeur-Offre Zenea_Produits_Sol" library="creation_devis_zenea_produits_du_sol">
+<status status="NOT RUN" starttime="20230214 09:54:18.961" endtime="20230214 09:54:18.961"/>
+</kw>
+<kw name="Tarificateur Zenéa_Produits_Sol" library="creation_devis_zenea_produits_du_sol">
+<status status="NOT RUN" starttime="20230214 09:54:18.961" endtime="20230214 09:54:18.961"/>
+</kw>
+<kw name="Envoi de la proposition commerciale-Offre zenea_Produits_Sol" library="creation_devis_zenea_produits_du_sol">
+<status status="NOT RUN" starttime="20230214 09:54:18.962" endtime="20230214 09:54:18.962"/>
+</kw>
+<kw name="Fermer le navigateur" library="selenium_utils" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230214 09:54:18.964" endtime="20230214 09:54:19.090"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Fin de l'exécution de test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:19.091" endtime="20230214 09:54:19.091"/>
+</kw>
+<status status="PASS" starttime="20230214 09:54:18.962" endtime="20230214 09:54:19.092"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:03.184" endtime="20230214 09:54:19.092">Element with locator 'id:username' not found.</status>
+</test>
+<test id="s1-s1-t5" name="Creation zenea_mareyeurs_expediteurs" line="73">
+<kw name="Ouvrir le navigateur" library="selenium_utils" type="SETUP">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230214 09:54:19.099" level="INFO">Opening browser 'Chrome' to base url 'https://qualif-partenaires.groupagrica.com/'.</msg>
+<status status="PASS" starttime="20230214 09:54:19.098" endtime="20230214 09:54:27.546"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230214 09:54:27.550" endtime="20230214 09:54:28.267"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Exécution de test démarrée sur ${browser}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:28.271" endtime="20230214 09:54:28.278"/>
+</kw>
+<status status="PASS" starttime="20230214 09:54:19.097" endtime="20230214 09:54:28.278"/>
+</kw>
+<kw name="Connexion en tant que Distributeur_Mareyeurs_Expediteurs" library="creation_devis_zenea_mareyeurs_expediteurs">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Step-01-Connexion en tant que destributeur</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:28.284" endtime="20230214 09:54:28.285"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>path : ${EXEC_DIR}/pages/connexion_page.robot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:28.285" endtime="20230214 09:54:28.286"/>
+</kw>
+<kw name="Se connecter à Agrica Espace Co" library="connexion_page">
+<arg>${nom_utilisateur_Distributeur}</arg>
+<arg>${motdepasse_Distributeur}</arg>
+<arg>${titre_profil_Distributeur}</arg>
+<kw name="Entrer l'adresse mail" library="connexion_page">
+<arg>${nom_utilisateur}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${champ_adressemail}</arg>
+<arg>${nom_utilisateur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230214 09:54:28.296" level="INFO">Typing text 'distributeur_qtpm@groupagrica.com' into text field 'id:username'.</msg>
+<msg timestamp="20230214 09:54:29.204" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230214 09:54:29.206" level="FAIL">Element with locator 'id:username' not found.</msg>
+<status status="FAIL" starttime="20230214 09:54:28.294" endtime="20230214 09:54:29.210"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:28.291" endtime="20230214 09:54:29.211"/>
+</kw>
+<kw name="Entrer le mot de passe" library="connexion_page">
+<arg>${motdepasse}</arg>
+<status status="NOT RUN" starttime="20230214 09:54:29.213" endtime="20230214 09:54:29.213"/>
+</kw>
+<kw name="Cliquer sur le bouton Connexion" library="connexion_page">
+<status status="NOT RUN" starttime="20230214 09:54:29.213" endtime="20230214 09:54:29.213"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${nom_profil_attendu}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20230214 09:54:29.214" endtime="20230214 09:54:29.214"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:28.288" endtime="20230214 09:54:29.214"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:28.283" endtime="20230214 09:54:29.215"/>
+</kw>
+<kw name="Formulaire Devis-Accès-Offre Zenea_Mareyeurs_Expediteurs" library="creation_devis_zenea_mareyeurs_expediteurs">
+<status status="NOT RUN" starttime="20230214 09:54:29.215" endtime="20230214 09:54:29.215"/>
+</kw>
+<kw name="Formulaire Devis-Entreprise-Offre Zenea_Mareyeurs_Expediteurs" library="creation_devis_zenea_mareyeurs_expediteurs">
+<status status="NOT RUN" starttime="20230214 09:54:29.215" endtime="20230214 09:54:29.215"/>
+</kw>
+<kw name="Formulaire Devis-Signataires-Offre Zenea_Mareyeurs_Expediteurs" library="creation_devis_zenea_mareyeurs_expediteurs">
+<status status="NOT RUN" starttime="20230214 09:54:29.216" endtime="20230214 09:54:29.216"/>
+</kw>
+<kw name="Formulaire Devis-Distributeur-Offre Zenea_Mareyeurs_Expediteurs" library="creation_devis_zenea_mareyeurs_expediteurs">
+<status status="NOT RUN" starttime="20230214 09:54:29.216" endtime="20230214 09:54:29.216"/>
+</kw>
+<kw name="Tarificateur Zenéa_Mareyeurs_Expediteurs" library="creation_devis_zenea_mareyeurs_expediteurs">
+<status status="NOT RUN" starttime="20230214 09:54:29.217" endtime="20230214 09:54:29.217"/>
+</kw>
+<kw name="Envoi de la proposition commerciale-Offre zenea_Mareyeurs_Expediteurs" library="creation_devis_zenea_mareyeurs_expediteurs">
+<status status="NOT RUN" starttime="20230214 09:54:29.217" endtime="20230214 09:54:29.217"/>
+</kw>
+<kw name="Fermer le navigateur" library="selenium_utils" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230214 09:54:29.219" endtime="20230214 09:54:29.334"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Fin de l'exécution de test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:29.334" endtime="20230214 09:54:29.335"/>
+</kw>
+<status status="PASS" starttime="20230214 09:54:29.218" endtime="20230214 09:54:29.335"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:19.095" endtime="20230214 09:54:29.335">Element with locator 'id:username' not found.</status>
+</test>
+<test id="s1-s1-t6" name="Creation devis offre Famille Rurale" line="85">
+<kw name="Ouvrir le navigateur" library="selenium_utils" type="SETUP">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230214 09:54:29.344" level="INFO">Opening browser 'Chrome' to base url 'https://qualif-partenaires.groupagrica.com/'.</msg>
+<status status="PASS" starttime="20230214 09:54:29.343" endtime="20230214 09:54:38.649"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230214 09:54:38.659" endtime="20230214 09:54:41.544"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Exécution de test démarrée sur ${browser}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:41.548" endtime="20230214 09:54:41.554"/>
+</kw>
+<status status="PASS" starttime="20230214 09:54:29.342" endtime="20230214 09:54:41.555"/>
+</kw>
+<kw name="Connexion en tant que Distributeur" library="creation_devis_offre_zenea">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Step-01-Connexion en tant que destributeur</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:41.556" endtime="20230214 09:54:41.557"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>path : ${EXEC_DIR}/pages/connexion_page.robot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:41.557" endtime="20230214 09:54:41.558"/>
+</kw>
+<kw name="Se connecter à Agrica Espace Co" library="connexion_page">
+<arg>${nom_utilisateur_Distributeur}</arg>
+<arg>${motdepasse_Distributeur}</arg>
+<arg>${titre_profil_Distributeur}</arg>
+<kw name="Entrer l'adresse mail" library="connexion_page">
+<arg>${nom_utilisateur}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${champ_adressemail}</arg>
+<arg>${nom_utilisateur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230214 09:54:41.577" level="INFO">Typing text 'distributeur_qtpm@groupagrica.com' into text field 'id:username'.</msg>
+<msg timestamp="20230214 09:54:44.272" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230214 09:54:44.276" level="FAIL">Element with locator 'id:username' not found.</msg>
+<status status="FAIL" starttime="20230214 09:54:41.563" endtime="20230214 09:54:44.279"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:41.560" endtime="20230214 09:54:44.280"/>
+</kw>
+<kw name="Entrer le mot de passe" library="connexion_page">
+<arg>${motdepasse}</arg>
+<status status="NOT RUN" starttime="20230214 09:54:44.280" endtime="20230214 09:54:44.280"/>
+</kw>
+<kw name="Cliquer sur le bouton Connexion" library="connexion_page">
+<status status="NOT RUN" starttime="20230214 09:54:44.281" endtime="20230214 09:54:44.281"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${nom_profil_attendu}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20230214 09:54:44.282" endtime="20230214 09:54:44.282"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:41.559" endtime="20230214 09:54:44.282"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:41.555" endtime="20230214 09:54:44.282"/>
+</kw>
+<kw name="Formulaire Devis-Accès-Offre Famille rurale" library="creation_devis_offre_rurale">
+<status status="NOT RUN" starttime="20230214 09:54:44.283" endtime="20230214 09:54:44.283"/>
+</kw>
+<kw name="Formulaire Devis-Entreprise-Offre Famille rurale" library="creation_devis_offre_rurale">
+<status status="NOT RUN" starttime="20230214 09:54:44.283" endtime="20230214 09:54:44.283"/>
+</kw>
+<kw name="Formulaire Devis-Signataires-Offre Famille rurale" library="creation_devis_offre_rurale">
+<status status="NOT RUN" starttime="20230214 09:54:44.284" endtime="20230214 09:54:44.284"/>
+</kw>
+<kw name="Formulaire Devis-Distributeur - Offre Famille rurale" library="creation_devis_offre_rurale">
+<status status="NOT RUN" starttime="20230214 09:54:44.284" endtime="20230214 09:54:44.284"/>
+</kw>
+<kw name="Tarificateur Famille Rurale" library="creation_devis_offre_rurale">
+<status status="NOT RUN" starttime="20230214 09:54:44.285" endtime="20230214 09:54:44.285"/>
+</kw>
+<kw name="Envoi de la proposition commerciale-Offre Famille rurale" library="creation_devis_offre_rurale">
+<status status="NOT RUN" starttime="20230214 09:54:44.285" endtime="20230214 09:54:44.285"/>
+</kw>
+<kw name="Fermer le navigateur" library="selenium_utils" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230214 09:54:44.287" endtime="20230214 09:54:44.432"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Fin de l'exécution de test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:44.432" endtime="20230214 09:54:44.433"/>
+</kw>
+<status status="PASS" starttime="20230214 09:54:44.286" endtime="20230214 09:54:44.433"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:29.340" endtime="20230214 09:54:44.433">Element with locator 'id:username' not found.</status>
+</test>
+<test id="s1-s1-t7" name="Creation devis offre ANPAD" line="94">
+<kw name="Ouvrir le navigateur" library="selenium_utils" type="SETUP">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230214 09:54:44.440" level="INFO">Opening browser 'Chrome' to base url 'https://qualif-partenaires.groupagrica.com/'.</msg>
+<status status="PASS" starttime="20230214 09:54:44.439" endtime="20230214 09:54:52.748"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230214 09:54:52.750" endtime="20230214 09:54:56.903"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Exécution de test démarrée sur ${browser}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:56.905" endtime="20230214 09:54:56.907"/>
+</kw>
+<status status="PASS" starttime="20230214 09:54:44.437" endtime="20230214 09:54:56.907"/>
+</kw>
+<kw name="Connexion en tant que Credit Agricole" library="creation_devis_accord_national_de_la_production_agricole">
+<kw name="Se connecter à Agrica Espace Co" library="connexion_page">
+<arg>${nom_utilisateur_CreditAgricole}</arg>
+<arg>${motdepasse_CreditAgricole}</arg>
+<arg>${titre_profil_CreditAgricole}</arg>
+<kw name="Entrer l'adresse mail" library="connexion_page">
+<arg>${nom_utilisateur}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${champ_adressemail}</arg>
+<arg>${nom_utilisateur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230214 09:54:56.913" level="INFO">Typing text 'auto.caisse-regionale@test.fr' into text field 'id:username'.</msg>
+<msg timestamp="20230214 09:54:58.302" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230214 09:54:58.305" level="FAIL">Element with locator 'id:username' not found.</msg>
+<status status="FAIL" starttime="20230214 09:54:56.912" endtime="20230214 09:54:58.309"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:56.911" endtime="20230214 09:54:58.309"/>
+</kw>
+<kw name="Entrer le mot de passe" library="connexion_page">
+<arg>${motdepasse}</arg>
+<status status="NOT RUN" starttime="20230214 09:54:58.310" endtime="20230214 09:54:58.310"/>
+</kw>
+<kw name="Cliquer sur le bouton Connexion" library="connexion_page">
+<status status="NOT RUN" starttime="20230214 09:54:58.310" endtime="20230214 09:54:58.310"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${nom_profil_attendu}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20230214 09:54:58.311" endtime="20230214 09:54:58.311"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:56.910" endtime="20230214 09:54:58.311"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:56.908" endtime="20230214 09:54:58.312"/>
+</kw>
+<kw name="Formulaire Devis-Accès-Offre ANPAD" library="creation_devis_accord_national_de_la_production_agricole">
+<status status="NOT RUN" starttime="20230214 09:54:58.312" endtime="20230214 09:54:58.312"/>
+</kw>
+<kw name="Formulaire Devis-Entreprise-Offre ANPAD" library="creation_devis_accord_national_de_la_production_agricole">
+<status status="NOT RUN" starttime="20230214 09:54:58.313" endtime="20230214 09:54:58.313"/>
+</kw>
+<kw name="Formulaire Devis-Signataires-Offre ANPAD" library="creation_devis_accord_national_de_la_production_agricole">
+<status status="NOT RUN" starttime="20230214 09:54:58.313" endtime="20230214 09:54:58.313"/>
+</kw>
+<kw name="Formulaire Devis-Distributeur-Zenea-Offre ANPAD" library="creation_devis_accord_national_de_la_production_agricole">
+<status status="NOT RUN" starttime="20230214 09:54:58.314" endtime="20230214 09:54:58.314"/>
+</kw>
+<kw name="Tarificateur ANPAD" library="creation_devis_accord_national_de_la_production_agricole">
+<status status="NOT RUN" starttime="20230214 09:54:58.314" endtime="20230214 09:54:58.314"/>
+</kw>
+<kw name="Envoi de la proposition commerciale-Offre ANPAD" library="creation_devis_accord_national_de_la_production_agricole">
+<status status="NOT RUN" starttime="20230214 09:54:58.314" endtime="20230214 09:54:58.315"/>
+</kw>
+<kw name="Fermer le navigateur" library="selenium_utils" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230214 09:54:58.316" endtime="20230214 09:54:58.464"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Fin de l'exécution de test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:54:58.465" endtime="20230214 09:54:58.466"/>
+</kw>
+<status status="PASS" starttime="20230214 09:54:58.315" endtime="20230214 09:54:58.466"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:44.436" endtime="20230214 09:54:58.466">Element with locator 'id:username' not found.</status>
+</test>
+<test id="s1-s1-t8" name="Creation devis offre CCN52" line="103">
+<kw name="Ouvrir le navigateur" library="selenium_utils" type="SETUP">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230214 09:54:58.475" level="INFO">Opening browser 'Chrome' to base url 'https://qualif-partenaires.groupagrica.com/'.</msg>
+<msg timestamp="20230214 09:55:00.457" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="FAIL" starttime="20230214 09:54:58.474" endtime="20230214 09:55:00.458"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20230214 09:55:00.459" endtime="20230214 09:55:00.459"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Exécution de test démarrée sur ${browser}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230214 09:55:00.462" endtime="20230214 09:55:00.463"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:58.473" endtime="20230214 09:55:00.465"/>
+</kw>
+<kw name="Fermer le navigateur" library="selenium_utils" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230214 09:55:00.471" endtime="20230214 09:55:00.475"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Fin de l'exécution de test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230214 09:55:00.475" endtime="20230214 09:55:00.480"/>
+</kw>
+<status status="PASS" starttime="20230214 09:55:00.466" endtime="20230214 09:55:00.481"/>
+</kw>
+<status status="FAIL" starttime="20230214 09:54:58.472" endtime="20230214 09:55:00.482">Setup failed:
+Execution terminated by signal</status>
+</test>
+<test id="s1-s1-t9" name="Creation devis offre PER CPCEA NON CADRES PROD / ETARF" line="112">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230214 09:55:00.496" endtime="20230214 09:55:00.502">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t10" name="Creation devis offre Vins et spiritueux santé" line="121">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230214 09:55:00.511" endtime="20230214 09:55:00.530">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t11" name="Creation devis offre Vins et spiritueux prévoyance" line="130">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230214 09:55:00.531" endtime="20230214 09:55:00.538">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t12" name="Creation devis offre SDLM prévoyance" line="139">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230214 09:55:00.540" endtime="20230214 09:55:00.553">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t13" name="Creation devis offre Centres équestres Santé" line="148">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230214 09:55:00.554" endtime="20230214 09:55:00.570">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t14" name="Creation devis offre Centres équestres Prévoyance" line="157">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230214 09:55:00.573" endtime="20230214 09:55:00.574">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t15" name="Creation devis offre ACCORD NATIONAL DE LA COOPERATION AGRIGOLE ET DES INDUSTRIES" line="166">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230214 09:55:00.575" endtime="20230214 09:55:00.576">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t16" name="Creation devis offre ACCORD TAM ET CADRES DU PAYSAGE" line="175">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230214 09:55:00.576" endtime="20230214 09:55:00.595">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t17" name="Creation devis offre ILIP (Indemnité Licenciement Inaptitude professionnelle)" line="184">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230214 09:55:00.596" endtime="20230214 09:55:00.602">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t18" name="Creation devis offre ACCORD NATIONAL DE LA PRODUCTION AGRICOLE – SANTÉ" line="193">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230214 09:55:00.605" endtime="20230214 09:55:00.607">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t19" name="Creation devis offre SDLM_Santé" line="202">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230214 09:55:00.607" endtime="20230214 09:55:00.608">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t20" name="Creation devis CCN des entreprises du Paysage Ouvriers et Employés" line="211">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230214 09:55:00.611" endtime="20230214 09:55:00.612">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t21" name="Creation devis RÉGIME D’ADHÉSION" line="221">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230214 09:55:00.619" endtime="20230214 09:55:00.621">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t22" name="Creation devis PER CPCEA - SUPPLÉMENT DE TAUX" line="230">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230214 09:55:00.622" endtime="20230214 09:55:00.624">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" starttime="20230214 09:53:30.547" endtime="20230214 09:55:00.628"/>
+</suite>
+<suite id="s1-s2" name="Poc-Bout-En-Bout" source="/home/dione/Documents/Projet/Automatisation Test/Test_Groupe_Agrica/tests/poc-bout-en-bout.robot">
+<test id="s1-s2-t1" name="POC bout en bout" line="25">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230214 09:55:00.679" endtime="20230214 09:55:00.684">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" starttime="20230214 09:55:00.636" endtime="20230214 09:55:00.685"/>
+</suite>
+<status status="FAIL" starttime="20230214 09:53:30.526" endtime="20230214 09:55:00.687"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="23" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="8" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+</tag>
+<suite>
+<stat pass="0" fail="23" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="22" skip="0" id="s1-s1" name="Mon Espace Commercial">Tests.Mon Espace Commercial</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s2" name="Poc-Bout-En-Bout">Tests.Poc-Bout-En-Bout</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
